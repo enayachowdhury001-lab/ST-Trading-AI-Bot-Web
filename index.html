@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0908" />
+  <title>ST Trading AI Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="ST Trading AI Bot home">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span><b>ST TRADING</b><small>AI BOT</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> ড্যাশবোর্ড</button>
+        <button class="nav-item" data-view="analyzer"><span>⌁</span> মার্কেট অ্যানালাইজার</button>
+        <button class="nav-item" data-view="history"><span>◷</span> সিগন্যাল হিস্ট্রি</button>
+        <button class="nav-item" data-view="plans"><span>◇</span> সাবস্ক্রিপশন</button>
+        <button class="nav-item" data-view="profile"><span>○</span> প্রোফাইল</button>
+      </nav>
+      <div class="sidebar-card">
+        <small>ACTIVE PLAN</small>
+        <div><b>PRO MAX</b><span>28 দিন বাকি</span></div>
+        <div class="progress"><i style="width:63%"></i></div>
+        <p>আজকের 80টির মধ্যে 51টি সিগন্যাল বাকি</p>
+      </div>
+      <button class="logout">↪ লগ আউট</button>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuBtn" aria-label="Menu">☰</button>
+        <div class="top-title"><small id="eyebrow">OVERVIEW</small><h1 id="pageTitle">ড্যাশবোর্ড</h1></div>
+        <div class="top-actions">
+          <div class="status"><i></i><span>সিস্টেম সচল</span></div>
+          <button class="icon-button" id="themeBtn" aria-label="Change theme">☼</button>
+          <button class="profile-chip"><span>RC</span><b>Rafayed</b></button>
+        </div>
+      </header>
+
+      <section class="view active" id="dashboard">
+        <div class="welcome">
+          <div><span class="gold-label">GOOD EVENING, RAFAYED</span><h2>স্মার্ট অ্যানালাইসিস।<br><em>শান্ত সিদ্ধান্ত।</em></h2><p>মার্কেট বেছে নিয়ে একাধিক ইন্ডিকেটরের সমন্বয়ে তৈরি বিশ্লেষণ দেখুন।</p></div>
+          <button class="primary" data-go="analyzer">অ্যানালাইসিস শুরু করুন <span>→</span></button>
+        </div>
+
+        <div class="stat-grid">
+          <article><span class="stat-icon brown">⌁</span><div><small>আজকের ব্যবহার</small><strong>29 <i>/ 80</i></strong></div><span class="trend">36%</span></article>
+          <article><span class="stat-icon green">↗</span><div><small>সাম্প্রতিক নির্ভুলতা</small><strong>84.6%</strong></div><span class="trend good">+4.2%</span></article>
+          <article><span class="stat-icon gold">◇</span><div><small>সক্রিয় প্ল্যান</small><strong>Pro Max</strong></div><span class="trend">28 দিন</span></article>
+          <article><span class="stat-icon blue">◷</span><div><small>মোট বিশ্লেষণ</small><strong>1,248</strong></div><span class="trend good">+32</span></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel market-panel">
+            <div class="panel-head"><div><small>MARKET PULSE</small><h3>মার্কেট ওভারভিউ</h3></div><button class="text-button" data-go="analyzer">সব দেখুন →</button></div>
+            <div class="market-tabs"><button class="active" data-market="live">Live Market</button><button data-market="otc">OTC Market</button></div>
+            <div id="marketRows"></div>
+          </article>
+          <article class="panel activity-panel">
+            <div class="panel-head"><div><small>RECENT</small><h3>সর্বশেষ বিশ্লেষণ</h3></div><button class="dots">•••</button></div>
+            <div class="signal-card up"><div class="signal-top"><span class="flag">🇪🇺</span><div><b>EUR/USD</b><small>Live · 1 min</small></div><span class="direction">↑ UP</span></div><div class="confidence"><span>Confidence</span><b>87%</b></div><div class="bar"><i style="width:87%"></i></div><footer><span>RSI · MACD · EMA</span><time>2 মিনিট আগে</time></footer></div>
+            <div class="signal-card down"><div class="signal-top"><span class="flag">🇬🇧</span><div><b>GBP/JPY</b><small>Live · 1 min</small></div><span class="direction">↓ DOWN</span></div><div class="confidence"><span>Confidence</span><b>81%</b></div><div class="bar"><i style="width:81%"></i></div><footer><span>ADX · Bollinger · EMA</span><time>7 মিনিট আগে</time></footer></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="analyzer">
+        <div class="section-intro"><div><span class="gold-label">AI MARKET ENGINE</span><h2>মার্কেট অ্যানালাইজার</h2><p>পেয়ার নির্বাচন করুন, সময়সীমা যাচাই করুন এবং secure analysis request পাঠান।</p></div><div class="quota"><small>আজকের অবশিষ্ট</small><b>51 <i>/ 80</i></b></div></div>
+        <article class="panel analyzer-panel">
+          <div class="analyzer-controls"><div class="market-tabs"><button class="active" data-full-market="live">Live Market</button><button data-full-market="otc">OTC Market</button></div><label class="search">⌕ <input id="pairSearch" placeholder="পেয়ার খুঁজুন..." /></label></div>
+          <div class="pair-grid" id="pairGrid"></div>
+        </article>
+      </section>
+
+      <section class="view" id="history"><div class="section-intro"><div><span class="gold-label">ACTIVITY LOG</span><h2>সিগন্যাল হিস্ট্রি</h2><p>আপনার সাম্প্রতিক বিশ্লেষণগুলো এক জায়গায় দেখুন।</p></div></div><article class="panel table-panel"><table><thead><tr><th>পেয়ার</th><th>মার্কেট</th><th>দিক</th><th>Confidence</th><th>সময়</th></tr></thead><tbody><tr><td>🇪🇺 EUR/USD</td><td>Live</td><td class="up-text">↑ UP</td><td>87%</td><td>2 মিনিট আগে</td></tr><tr><td>🇬🇧 GBP/JPY</td><td>Live</td><td class="down-text">↓ DOWN</td><td>81%</td><td>7 মিনিট আগে</td></tr><tr><td>🇦🇺 AUD/CAD</td><td>OTC</td><td class="up-text">↑ UP</td><td>79%</td><td>18 মিনিট আগে</td></tr></tbody></table></article></section>
+
+      <section class="view" id="plans"><div class="section-intro"><div><span class="gold-label">MEMBERSHIP</span><h2>সাবস্ক্রিপশন প্ল্যান</h2><p>আপনার ট্রেডিং রুটিন অনুযায়ী দৈনিক বিশ্লেষণ সীমা বেছে নিন।</p></div></div><div class="plans-grid"><article><small>PRO</small><h3>$20 <i>/ month</i></h3><b>প্রতিদিন 30 সিগন্যাল</b><ul><li>Live ও OTC market</li><li>Indicator breakdown</li><li>Signal history</li></ul><button>প্ল্যান নিন</button></article><article class="featured"><span class="popular">POPULAR</span><small>PRO MAX</small><h3>$50 <i>/ month</i></h3><b>প্রতিদিন 80 সিগন্যাল</b><ul><li>Live ও OTC market</li><li>Advanced confidence score</li><li>Priority analysis</li></ul><button>বর্তমান প্ল্যান</button></article><article><small>ULTRA PRO MAX</small><h3>$70 <i>/ month</i></h3><b>প্রতিদিন 200 সিগন্যাল</b><ul><li>সব market ও indicator</li><li>Full analysis details</li><li>Priority support</li></ul><button>আপগ্রেড করুন</button></article></div></section>
+
+      <section class="view" id="profile"><div class="section-intro"><div><span class="gold-label">ACCOUNT</span><h2>প্রোফাইল</h2><p>ব্যক্তিগত তথ্য ও নিরাপত্তা সেটিংস পরিচালনা করুন।</p></div></div><article class="panel profile-panel"><div class="avatar">RC</div><div class="profile-form"><label>পুরো নাম<input value="Rafayed Chowdhury"></label><label>ইমেইল<input value="rafayedchowdhury@gmail.com" disabled></label><label>বর্তমান প্ল্যান<input value="Pro Max — 28 days remaining" disabled></label><button class="primary">পরিবর্তন সংরক্ষণ করুন</button></div></article></section>
+    </main>
+  </div>
+
+  <div class="modal" id="analysisModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><span class="analysis-orb"><i></i></span><small>SECURE ANALYSIS</small><h3 id="modalPair">EUR/USD</h3><p id="modalText">মার্কেট ডেটা যাচাই করে বিশ্লেষণ অনুরোধ পাঠানো হচ্ছে…</p><div class="loading"><i></i></div><button class="primary hidden" id="retryBtn">আবার চেষ্টা করুন</button></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
